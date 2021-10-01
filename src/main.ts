@@ -1,22 +1,31 @@
-import { App, Construct, Stack, StackProps } from '@aws-cdk/core';
+import * as cdk from '@aws-cdk/core';
+import { SourceStack } from './sourceStack';
+import { TargetStack } from './targetStack';
 
-export class MyStack extends Stack {
-  constructor(scope: Construct, id: string, props: StackProps = {}) {
-    super(scope, id, props);
+const app = new cdk.App();
 
-    // define resources here...
-  }
-}
+const targetAccount = app.node.tryGetContext('TargetAccount') as string;
+const sourceAccount = app.node.tryGetContext('SourceAccount') as string;
 
-// for development, use account/region from cdk cli
-const devEnv = {
-  account: process.env.CDK_DEFAULT_ACCOUNT,
+const targetEnv = {
+  account: targetAccount,
   region: process.env.CDK_DEFAULT_REGION,
 };
 
-const app = new App();
+const sourceEnv = {
+  account: sourceAccount,
+  region: process.env.CDK_DEFAULT_REGION,
+};
 
-new MyStack(app, 'my-stack-dev', { env: devEnv });
-// new MyStack(app, 'my-stack-prod', { env: prodEnv });
+const target = new TargetStack(app, 'TargetStack', {
+  env: targetEnv,
+  sourceAccountId: sourceAccount,
+});
+
+new SourceStack(app, 'SourceStack', {
+  env: sourceEnv,
+  targetBus: target.bus,
+});
+
 
 app.synth();

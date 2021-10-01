@@ -79,6 +79,21 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/aws-events-targets",
+      "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-events",
+      "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-iam",
+      "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/core",
       "version": "^1.95.2",
       "type": "runtime"

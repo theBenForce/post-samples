@@ -4,7 +4,13 @@ const project = new AwsCdkTypeScriptApp({
   defaultReleaseBranch: 'main',
   name: 'post-samples',
 
-  // cdkDependencies: undefined,  /* Which AWS CDK modules (those that start with "@aws-cdk/") this app uses. */
+  gitignore: ['cdk.context.json'],
+
+  cdkDependencies: [
+    '@aws-cdk/aws-events',
+    '@aws-cdk/aws-events-targets',
+    '@aws-cdk/aws-iam',
+  ], /* Which AWS CDK modules (those that start with "@aws-cdk/") this app uses. */
   // deps: [],                    /* Runtime dependencies of this module. */
   // description: undefined,      /* The description is just a string that helps people understand the purpose of the package. */
   // devDeps: [],                 /* Build dependencies for this module. */
