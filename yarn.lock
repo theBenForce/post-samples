@@ -449,7 +449,7 @@
     "@aws-cdk/region-info" "1.125.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-logs@1.125.0":
+"@aws-cdk/aws-logs@1.125.0", "@aws-cdk/aws-logs@^1.95.2":
   version "1.125.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-logs/-/aws-logs-1.125.0.tgz#162557316849ef688478c6c910169683a093f7eb"
   integrity sha512-xTIdq6bo/5JfpYnSIU1hsAucS+Qcc5bFJdL0Iv/XPqya33ImQJ8xNMi/HP+SKhLCXxGrhYPe8v0aQCKonO70rw==

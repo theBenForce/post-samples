@@ -42,6 +42,7 @@
     "@aws-cdk/aws-events": "^1.95.2",
     "@aws-cdk/aws-events-targets": "^1.95.2",
     "@aws-cdk/aws-iam": "^1.95.2",
+    "@aws-cdk/aws-logs": "^1.95.2",
     "@aws-cdk/core": "^1.95.2"
   },
   "bundledDependencies": [],
